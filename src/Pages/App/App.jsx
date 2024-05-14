@@ -1,12 +1,14 @@
 import './App.css'
 
-function App() {
-  const [count, setCount] = useState(0)
+/* PAGES */
+import Home from '../Home'
 
+
+function App() {
   return (
     <>
       <div className='bg-zinc-300'>
-        Holis
+        <Home />
       </div>
 
     </>
@@ -14,3 +16,4 @@ function App() {
 }
 
 export default App
+
