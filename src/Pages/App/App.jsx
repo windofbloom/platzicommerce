@@ -8,6 +8,9 @@ import MyOrders from '../MyOrders'
 import NotFound from '../NotFound'
 import SignIn from '../SignIn'
 
+/* COMPONETS */
+import { Navbar } from '../../Componets/Navbar'
+
 import './App.css'
 
 const AppRoutes = () => {
@@ -27,6 +30,7 @@ function App() {
   return (
     <BrowserRouter>
       <AppRoutes />
+      <Navbar />
     </BrowserRouter>
   )
 }
