@@ -1,7 +1,6 @@
 import { NavLink } from "react-router-dom";
 
 const NavRightComponet = [
-    { name: 'Shopi', path: '/' },
     { name: 'All', path: '/' },
     { name: 'Clothes', path: '/clothes' },
     { name: 'Women', path: '/women' },
@@ -21,10 +20,14 @@ function Navbar() {
 
     return(
         <nav className="flex justify-between items-center fixed z-10 w-full 
-        py-5 px-8 text-sm font-light">
+        py-5 px-8 text-sm font-light top-0">
             <ul className="flex item-center gap-3">
+            <li className="font-semibold">
+                    <a href="/">Shopi</a>
+                </li>
+
                 {NavRightComponet.map((Component, index) => (
-                    <li key={index} className={index === 0 ? 'font-semibold': ''}>
+                    <li key={index} className={index === 0 ? '': ''}>
                         <NavLink to={Component.path} 
                         className={({ isActive }) =>
                             isActive ? activeStyle : undefined
@@ -58,4 +61,4 @@ function Navbar() {
     );
 }
 
-export { Navbar};
+export default Navbar

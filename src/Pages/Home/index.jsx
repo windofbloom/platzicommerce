@@ -1,12 +1,12 @@
+import Layout from "../../Componets/Layout"
+
 function Home() {
   
     return (
-      <>
-        <div>
-          Home
-        </div>
+      <Layout>
+        Home
+      </Layout>
   
-      </>
     )
   }
   
