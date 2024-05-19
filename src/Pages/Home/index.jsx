@@ -25,7 +25,8 @@ function Home() {
     return (
       <Layout>
         Home
-        <section className="">
+        <section className="grid sm:gap-4 gap-4 w-full max-w-screen-lg
+          grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
         {
           items.map(item => (
             <Card
