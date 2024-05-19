@@ -1,12 +1,40 @@
-import Card from "../../Componets/Card"
+import { useState, useEffect } from "react"
 import Layout from "../../Componets/Layout"
+import Card from "../../Componets/Card"
+
+import { apiUrl } from "../../api"
 
 function Home() {
+
+  const [items, setItems] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await
+        fetch (`${apiUrl}`)
+        const data = await response.json()
+        setItems(data)
+      } catch (error) {
+        console.error(`Oh no, ocurrió un error: ${error}`);
+      }
+    }
+    fetchData()
+  }, [])
   
     return (
       <Layout>
         Home
-        <Card />
+        <section className="">
+        {
+          items.map(item => (
+            <Card
+              key={item.id}
+              data={item}
+            />
+          ))
+        }
+      </section>
       </Layout>
   
     )
