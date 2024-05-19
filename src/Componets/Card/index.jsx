@@ -1,3 +1,5 @@
+import { IconShoppingBag } from '@tabler/icons-react';
+
 function Card (data) {
     return (
         <article className="bg-white cursor-pointer w-56 h-60">
@@ -12,6 +14,7 @@ function Card (data) {
                 <span className="text-sm font-light truncate mt-1">{data.data.title}</span>
                 <span className="text-lg font-medium">${data.data.price}</span>
             </p>
+            <button className='flex justify-between'><IconShoppingBag /> Add to Cart </button>
         </article>
     )
 }

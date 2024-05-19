@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import { IconShoppingBag } from '@tabler/icons-react';
 
 const NavRightComponet = [
     { name: 'All', path: '/' },
@@ -54,7 +55,7 @@ function Navbar() {
                     </li>
                 ))}
                 <li>
-                    Carrito de compra
+                    <IconShoppingBag />
                 </li>
             </ul>
         </nav>
