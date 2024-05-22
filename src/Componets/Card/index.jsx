@@ -7,7 +7,9 @@ function Card (data) {
     const context = useContext(ShoppingCartContext);
 
     return (
-        <article className="bg-white cursor-pointer w-56 h-60">
+        <article 
+            className="bg-white cursor-pointer w-56 h-60"
+            onClick={() => context.openProductDetial()}>
             <figure className="relative mb-2 w-full h-4/5">
                 <div className="absolute bottom-0 left-0 bg-white/60 rounded-lg
                  text-black text-xs m-2 px-3 py-0.5 ">{data.data.category}</div>
@@ -22,7 +24,9 @@ function Card (data) {
                 <span className="text-lg font-medium">${data.data.price}</span>
             </p>
             <button className="flex justify-between"
-                onClick={()=> context.setCount(context.count + 1)}>
+                onClick={(e)=> {
+                    e.stopPropagation();
+                    context.setCount(context.count + 1)}>
                     <IconShoppingBag /> Add to Cart 
             </button>
         </article>

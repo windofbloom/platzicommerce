@@ -1,7 +1,19 @@
+import { IconX } from '@tabler/icons-react';
+import { useContext } from 'react';
+import { ShoppingCartContext } from '../../Context';
+
 function ProductDetail () {
+    const context = useContext(ShoppingCartContext);
+
     return (
-        <section className="flex flex-col fixed rounded-lg bg-white border border-black">
-            <h1>Hola</h1>
+        <section 
+            className={`${context.isProductDetailOpen ? 'flex' : 'hidden'}
+                 flex-col fixed rounded-lg
+                 bg-white border border-black w-[calc(70vh-90px)]`}>
+            <div className='flex justify-between items-center p-6'>
+                <h2 className='font-medium text-xl'>Product Details</h2>
+                <IconX />
+            </div>
         </section>
     )
 }
