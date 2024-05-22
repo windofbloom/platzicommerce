@@ -12,7 +12,6 @@ import SignIn from '../SignIn'
 /* COMPONETS */
 import Navbar from "../../Componets/Navbar";
 
-
 import './App.css'
 
 const AppRoutes = () => {

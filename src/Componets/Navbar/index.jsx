@@ -1,4 +1,7 @@
+import { useContext } from 'react';
+import { ShoppingCartContext } from '../../Context';
 import { NavLink } from "react-router-dom";
+
 import { IconShoppingBag } from '@tabler/icons-react';
 
 const NavRightComponet = [
@@ -15,6 +18,7 @@ const NavLeftComponet = [
 ];
 
 function Navbar() {
+    const context = useContext(ShoppingCartContext);
     const activeStyle = {
         textDecoration: "underline underline-offset",
     };
@@ -54,8 +58,8 @@ function Navbar() {
                         </NavLink>
                     </li>
                 ))}
-                <li>
-                    <IconShoppingBag />
+                <li className="flex justify-center items-center">
+                    <IconShoppingBag /> {context.count}
                 </li>
             </ul>
         </nav>

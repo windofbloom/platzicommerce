@@ -1,6 +1,11 @@
-import { IconShoppingBag } from '@tabler/icons-react';
+import { useContext } from 'react';
+import { ShoppingCartContext } from '../../Context';
+
+import { IconShoppingBag, IconPlus } from '@tabler/icons-react';
 
 function Card (data) {
+    const context = useContext(ShoppingCartContext);
+
     return (
         <article className="bg-white cursor-pointer w-56 h-60">
             <figure className="relative mb-2 w-full h-4/5">
@@ -8,13 +13,18 @@ function Card (data) {
                  text-black text-xs m-2 px-3 py-0.5 ">{data.data.category}</div>
                 <img className="w-full h-full object-cover rounded-lg " src={data.data.image} alt={data.data.title} />
                 <button className="absolute top-0 right-0 flex justify-center items-center
-                bg-white w-6 h-6 rounded-full m-2 p-1">+</button>
+                bg-white w-6 h-6 rounded-full m-2 p-1"
+                    onClick={()=> context.setCount(context.count + 1)}> 
+                <IconPlus /></button>
             </figure>
             <p className="flex justify-between">
                 <span className="text-sm font-light truncate mt-1">{data.data.title}</span>
                 <span className="text-lg font-medium">${data.data.price}</span>
             </p>
-            <button className='flex justify-between'><IconShoppingBag /> Add to Cart </button>
+            <button className="flex justify-between"
+                onClick={()=> context.setCount(context.count + 1)}>
+                    <IconShoppingBag /> Add to Cart 
+            </button>
         </article>
     )
 }
