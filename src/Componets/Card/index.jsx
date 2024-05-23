@@ -15,8 +15,7 @@ function Card (data) {
                  text-black text-xs m-2 px-3 py-0.5 ">{data.data.category}</div>
                 <img className="w-full h-full object-cover rounded-lg " src={data.data.image} alt={data.data.title} />
                 <button className="absolute top-0 right-0 flex justify-center items-center
-                bg-white w-6 h-6 rounded-full m-2 p-1"
-                    onClick={()=> context.setCount(context.count + 1)}> 
+                bg-white w-6 h-6 rounded-full m-2 p-1"> 
                 <IconPlus /></button>
             </figure>
             <p className="flex justify-between">
@@ -26,7 +25,7 @@ function Card (data) {
             <button className="flex justify-between"
                 onClick={(e)=> {
                     e.stopPropagation();
-                    context.setCount(context.count + 1)}>
+                    context.setCount(context.count + 1)}}>
                     <IconShoppingBag /> Add to Cart 
             </button>
         </article>
