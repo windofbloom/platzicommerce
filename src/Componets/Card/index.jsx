@@ -11,18 +11,19 @@ function Card (data) {
         context.setProductToShow(productDetail);
     }
 
-const incrementItemCount = () => {
-    context.setCount(context.count + 1)
-}
+//const incrementItemCount = () => {
+//    
+//}
+//
+//const addProductsToCart = (productData) => {
+//    
+//}
 
 const addProductsToCart = (productData) => {
     context.setCartProducts([...context.cartProducts, productData]);
-}
-
-const handleClick = () => {
-    incrementItemCount();
-    addProductsToCart();
+    context.setCount(context.count + 1)
     context.openCheckoutSideMenu();
+    console.log('CART: ', context.cartProducts);
   };
 
     return (
@@ -44,7 +45,7 @@ const handleClick = () => {
             <button className="flex justify-between"
                  onClick={(e)=> {
                     e.stopPropagation();
-                    handleClick(data.data)}}>
+                    addProductsToCart(data.data)}}>
                     <IconShoppingBag /> Add to Cart 
             </button>
         </article>
