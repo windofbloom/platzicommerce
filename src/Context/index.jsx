@@ -19,10 +19,7 @@ export const ShoppingCartProvider = ({children}) => {
 
     //Checkout Side Menu - open/close
     const [isCheckoutSideMenuOpen, setIsCheckoutSideMenu] = useState(false);
-    const openCheckoutSideMenu = () => {
-        console.log('Opening Checkout Side Menu');
-        setIsCheckoutSideMenu(true);
-    } 
+    const openCheckoutSideMenu = () => setIsCheckoutSideMenu(true);
     const closeCheckoutSideMenu = () => setIsCheckoutSideMenu(false);
 
     return (

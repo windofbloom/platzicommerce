@@ -23,8 +23,6 @@ const handleClick = () => {
     incrementItemCount();
     addProductsToCart();
     context.openCheckoutSideMenu();
-
-    console.log('CART;', context.cartProducts);
   };
 
     return (
