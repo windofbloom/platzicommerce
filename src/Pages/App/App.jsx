@@ -11,6 +11,7 @@ import SignIn from '../SignIn'
 
 /* COMPONETS */
 import Navbar from "../../Componets/Navbar";
+import CheckoutSideMenu from '../../Componets/CheckoutSideMenu'
 
 import './App.css'
 
@@ -33,6 +34,7 @@ function App() {
       <BrowserRouter>
         <AppRoutes />
         <Navbar />
+        <CheckoutSideMenu />
       </BrowserRouter>
     </ShoppingCartProvider>
   )

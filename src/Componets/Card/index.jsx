@@ -17,12 +17,14 @@ const incrementItemCount = () => {
 
 const addProductsToCart = (productData) => {
     context.setCartProducts([...context.cartProducts, productData]);
-    console.log('CART: ', context.cartProducts);
 }
 
 const handleClick = () => {
     incrementItemCount();
     addProductsToCart();
+    context.openCheckoutSideMenu();
+
+    console.log('CART;', context.cartProducts);
   };
 
     return (
