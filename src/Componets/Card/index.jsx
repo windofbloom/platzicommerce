@@ -11,6 +11,20 @@ function Card (data) {
         context.setProductToShow(productDetail);
     }
 
+const incrementItemCount = () => {
+    context.setCount(context.count + 1)
+}
+
+const addProductsToCart = (productData) => {
+    context.setCartProducts([...context.cartProducts, productData]);
+    console.log('CART: ', context.cartProducts);
+}
+
+const handleClick = () => {
+    incrementItemCount();
+    addProductsToCart();
+  };
+
     return (
         <article 
             className="bg-white cursor-pointer w-56 h-60"
@@ -28,9 +42,9 @@ function Card (data) {
                 <span className="text-lg font-medium">${data.data.price}</span>
             </p>
             <button className="flex justify-between"
-                onClick={(e)=> {
+                 onClick={(e)=> {
                     e.stopPropagation();
-                    context.setCount(context.count + 1)}}>
+                    handleClick(data.data)}}>
                     <IconShoppingBag /> Add to Cart 
             </button>
         </article>
