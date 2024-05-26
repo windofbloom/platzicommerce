@@ -7,6 +7,7 @@ import './style.css'
 
 function CheckoutSideMenu() {
     const context = useContext(ShoppingCartContext);
+    console.log('CART: ', context.cartProducts);
 
     return (
         <aside 
@@ -19,6 +20,16 @@ function CheckoutSideMenu() {
                     className='cursor-pointer' 
                     onClick={() => context.closeCheckoutSideMenu()} />
             </div>
+            {
+                context.cartProducts.map( (product, index) => (
+                    <OrderCard 
+                        key={`${product.id}-${index}`}
+                        title={product.title}
+                        imageURL={product.image}
+                        price={product.price}
+                    />
+                ))
+            }
         </aside>
     );
 }

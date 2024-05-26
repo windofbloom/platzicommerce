@@ -9,21 +9,14 @@ function Card (data) {
     const showProduct = (productDetail) => {
         context.openProductDetial();
         context.setProductToShow(productDetail);
+        context.closeCheckoutSideMenu();
     }
-
-//const incrementItemCount = () => {
-//    
-//}
-//
-//const addProductsToCart = (productData) => {
-//    
-//}
 
 const addProductsToCart = (productData) => {
     context.setCartProducts([...context.cartProducts, productData]);
     context.setCount(context.count + 1)
     context.openCheckoutSideMenu();
-    console.log('CART: ', context.cartProducts);
+    context.closeProductDetial();
   };
 
     return (
