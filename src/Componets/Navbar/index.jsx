@@ -6,9 +6,10 @@ import { IconShoppingBag } from '@tabler/icons-react';
 
 const NavRightComponet = [
     { name: 'All', path: '/' },
-    { name: 'Clothes', path: '/clothes' },
-    { name: 'Women', path: '/women' },
-    { name: 'Girls', path: '/girls' }
+    { name: 'Jewerly', path: '/jewerly' },
+    { name: 'Women Clothing', path: '/women-clothing' },
+    { name: 'Men Clothing', path: '/men-clothing' },
+    { name: 'Electronics', path: '/electronics' }
 ];
 
 const NavLeftComponet = [
