@@ -19,6 +19,33 @@ const addProductsToCart = (productData) => {
     context.closeProductDetial();
   };
 
+  const renderButton = (id) => {
+    const isInart = 
+    context.cartProducts.filter(product => product.id === id).length > 0
+
+    if (isInart) {
+        return (
+            <div>
+                <button className="flex justify-between text-cyan-500">
+                        <IconShoppingBag /> Added to Cart 
+                </button>
+            </div>
+        )
+    } else {
+        return(
+            <div>
+                <button className="flex justify-between"
+                     onClick={(e)=> {
+                        e.stopPropagation();
+                        addProductsToCart(data.data)}}>
+                        <IconShoppingBag /> Add to Cart 
+                </button>
+            </div>
+        )
+    }
+
+  }
+
     return (
         <article 
             className="bg-white cursor-pointer w-56 h-60"
@@ -35,12 +62,7 @@ const addProductsToCart = (productData) => {
                 <span className="text-sm font-light truncate mt-1">{data.data.title}</span>
                 <span className="text-lg font-medium">${data.data.price}</span>
             </p>
-            <button className="flex justify-between"
-                 onClick={(e)=> {
-                    e.stopPropagation();
-                    addProductsToCart(data.data)}}>
-                    <IconShoppingBag /> Add to Cart 
-            </button>
+            {renderButton(data.data.id)}
         </article>
     )
 }
