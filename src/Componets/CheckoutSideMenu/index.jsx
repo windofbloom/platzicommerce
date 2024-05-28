@@ -1,6 +1,7 @@
 import { useContext } from 'react';
 import { ShoppingCartContext } from '../../Context';
 import OrderCard from '../../Componets/OrderCard';
+import { totalPrice } from '../../utils'
 
 import { IconX } from '@tabler/icons-react';
 import './style.css'
@@ -24,6 +25,7 @@ function CheckoutSideMenu() {
                     className='cursor-pointer' 
                     onClick={() => context.closeCheckoutSideMenu()} />
             </div>
+            <div className='px-6'>
             {
                 context.cartProducts.map((product, index) => (
                     <OrderCard 
@@ -36,6 +38,13 @@ function CheckoutSideMenu() {
                     />
                 ))
             }
+            </div>
+            <div className='px-6'>
+                <p className='flex justify-between items-center'>
+                    <span className='font-light'>Total:</span>
+                    <span className='font-medium text-2xl'>${totalPrice(context.cartProducts)} </span>
+                </p>
+            </div>
         </aside>
     );
 }
