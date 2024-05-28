@@ -1,5 +1,7 @@
 import { useContext } from 'react';
+import { Link } from 'react-router-dom';
 import { ShoppingCartContext } from '../../Context';
+
 import OrderCard from '../../Componets/OrderCard';
 import { totalPrice } from '../../utils'
 
@@ -21,6 +23,7 @@ function CheckoutSideMenu() {
             totalProducts: context.cartProducts.length,
             totalPrice: totalPrice(context.cartProducts)
         }
+        context.closeCheckoutSideMenu()
 
         context.setOrder([...context.order, orderToAdd])
         context.setCartProducts([])
@@ -38,29 +41,31 @@ function CheckoutSideMenu() {
                     onClick={() => context.closeCheckoutSideMenu()} />
             </div>
             <div className='px-6 flex-1'>
-            {
-                context.cartProducts.map((product, index) => (
-                    <OrderCard 
-                        key={`${product.id}-${index}`}
-                        id={product.id}
-                        title={product.title}
-                        imageURL={product.image}
-                        price={product.price}
-                        handleDelete={handleDelete}
-                    />
-                ))
-            }
+                {
+                    context.cartProducts.map((product, index) => (
+                        <OrderCard 
+                            key={`${product.id}-${index}`}
+                            id={product.id}
+                            title={product.title}
+                            imageURL={product.image}
+                            price={product.price}
+                            handleDelete={handleDelete}
+                        />
+                    ))
+                }
             </div>
             <div className='px-6 mb-6'>
                 <p className='flex justify-between items-center mb-2'>
                     <span className='font-light'>Total:</span>
                     <span className='font-medium text-2xl'>${totalPrice(context.cartProducts)} </span>
                 </p>
-                <button 
-                    className='bg-black py-3 text-white rounded-lg w-full'
-                    onClick={() => handleCheckout()}>
-                        Checkout
-                </button>
+                <Link to='/my-orders/last'>
+                    <button 
+                        className='bg-black py-3 text-white rounded-lg w-full'
+                        onClick={() => handleCheckout()}>
+                            Checkout
+                    </button>
+                </Link>
             </div>
         </aside>
     );

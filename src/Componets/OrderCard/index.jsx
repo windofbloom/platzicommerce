@@ -2,6 +2,14 @@ import { IconX } from '@tabler/icons-react';
 
 function OrderCard (props) {
     const { id, title, imageURL, price, handleDelete } = props;
+    let renderIconX
+
+    if (handleDelete) {
+        renderIconX = <IconX 
+        className='cursor-pointer'
+        onClick={() => handleDelete(id)}
+    />
+    }
 
     return(
         <div className="flex justify-between items-center mb-3">
@@ -14,10 +22,7 @@ function OrderCard (props) {
             </div>
             <div className='flex items-center gap-2'>
                 <p className='text-lg font-medium'>{price}</p>
-                <IconX 
-                    className='cursor-pointer'
-                    onClick={() => handleDelete(id)}
-                />
+                {renderIconX}
             </div>
         </div>
     )
