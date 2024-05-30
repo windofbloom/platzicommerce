@@ -9,7 +9,7 @@ import { IconChevronsLeft } from '@tabler/icons-react';
 function MyOrder() {
   const context = useContext(ShoppingCartContext);
   const currentPath = window.location.pathname;
-  const index = currentPath.substring(currentPath.lastIndexOf('/') + 1)
+  //const index = currentPath.substring(currentPath.lastIndexOf('/') + 1)
 
   const lastOrder = context.order?.slice(-1)[0];
   const products = lastOrder?.productos || [];
