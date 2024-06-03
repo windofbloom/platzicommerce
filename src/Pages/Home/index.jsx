@@ -11,6 +11,21 @@ import Search from "../../Componets/Search";
 function Home() {
 
   const context = useContext(ShoppingCartContext);
+
+  const renderView = () => {
+    const itemsToRender = 
+      context.searchByTitle?.length > 0
+        ? context.filtereditems
+        : context.items
+
+      if (itemsToRender?.length > 0) {
+        return itemsToRender.map(item => (
+          <Card key={item.id} data={item} />
+        ));
+      } else {
+        return <p>No Results Found</p>
+      }
+  }
   
     return (
       <Layout>
@@ -22,14 +37,7 @@ function Home() {
         <section className="grid sm:gap-4 gap-4 w-full max-w-screen-lg
           grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
 
-        {
-          context.items.map(item => (
-            <Card
-              key={item.id}
-              data={item}
-            />
-          ))
-        }
+        {renderView()}
       </section>
       <ProductDetail />
       </Layout>
