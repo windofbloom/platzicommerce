@@ -42,8 +42,6 @@ export const ShoppingCartProvider = ({children}) => {
     useEffect (() => {
       if (searchByTitle) setFilteredItems(filtereditemsByTitle(items, searchByTitle))
     }, [items, searchByTitle])
-
-    console.log('filtereditems: ', filtereditems);
   
     //API Fuction
     useEffect(() => {
