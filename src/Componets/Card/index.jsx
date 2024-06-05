@@ -58,7 +58,7 @@ const addProductsToCart = (productData) => {
                  text-black text-xs m-2 px-3 py-0.5 ">{data.data.category}</div>
                 <img className="w-full h-full object-cover rounded-lg " src={data.data.image} alt={data.data.title} />
                 <button className="absolute top-0 right-0 flex justify-center items-center
-                bg-white w-6 h-6 rounded-full m-2 p-1"> 
+                bg-gray-900 text-white w-6 h-6 rounded-full m-2 p-1"> 
                 <IconPlus /></button>
             </figure>
             <p className="flex justify-between">
