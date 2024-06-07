@@ -34,10 +34,9 @@ function Home() {
           <Search />
         </div>
 
-        <section className="grid sm:gap-4 gap-4 w-full max-w-screen-lg
-          grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-
-        {renderView()}
+        <section className="grid gap-6 sm:gap-8 md:gap-10 lg:gap-12 w-full 
+        max-w-screen-lg grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+          {renderView()}
       </section>
       <ProductDetail />
       </Layout>
