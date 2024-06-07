@@ -34,7 +34,7 @@ function Navbar() {
  return(
     <>
 <nav className="flex justify-between items-center fixed z-10 w-full 
-        py-5 px-8 text-sm font-light top-0 bg-black text-white">
+        py-5 px-8 text-sm font-light top-0 bg-black text-white font-mono">
 
         <ul className="hidden md:flex item-center gap-3">
             <li className="font-semibold">
@@ -81,7 +81,7 @@ function Navbar() {
     </nav>
     {
       isOpen && (
-       <div className="mt-3 bg-black text-white w-full fixed top-0 left-0 z-10 p-11">
+       <div className="font-mono mt-3 bg-black text-white w-full fixed top-0 left-0 z-10 p-11">
           <ul className="flex flex-col items-start gap-3">
             <div className="-mt-6 mb-5">
                     <button onClick={toggleNavbar}>
