@@ -35,6 +35,10 @@ function Home() {
           <h2 className='font-light text-xl p-4 bg-black w-full text-white uppercase tracking-wide text-center'>
             Most Recent Products</h2>
         </div>
+        <div className="text-center">
+        <h3 className="text-lg font-medium">Look for what you want:</h3>
+        <Search />
+        </div>
 
         <section className="grid gap-6 sm:gap-8 md:gap-10 lg:gap-12 w-full 
         max-w-screen-lg grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
