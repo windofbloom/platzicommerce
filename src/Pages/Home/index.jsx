@@ -6,6 +6,7 @@ import { ShoppingCartContext } from '../../Context';
 import Card from "../../Componets/Card"
 import ProductDetail from "../../Componets/ProductDetail";
 import Search from "../../Componets/Search";
+import Header from "../../Componets/Header";
 
 
 function Home() {
@@ -29,9 +30,10 @@ function Home() {
   
     return (
       <Layout>
+        <Header />
         <div className='flex w-80 justify-center relative mb-4 flex-col items-center'>
-          <h1 className='font-medium text-xl'>Most Recent Products</h1>
-          <Search />
+          <h2 className='font-light text-xl p-4 bg-black w-full text-white uppercase tracking-wide text-center'>
+            Most Recent Products</h2>
         </div>
 
         <section className="grid gap-6 sm:gap-8 md:gap-10 lg:gap-12 w-full 
