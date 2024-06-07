@@ -8,6 +8,8 @@ import ProductDetail from "../../Componets/ProductDetail";
 import Search from "../../Componets/Search";
 import Header from "../../Componets/Header";
 
+import { IconGhostOff } from '@tabler/icons-react';
+
 
 function Home() {
 
@@ -24,19 +26,20 @@ function Home() {
           <Card key={item.id} data={item} />
         ));
       } else {
-        return <p>No Results Found</p>
+        return <p className="font-mono text-center flex justify-between align-center">
+          No Results Found <IconGhostOff /></p>
       }
   }
   
     return (
       <Layout>
         <Header />
-        <div className='flex w-80 justify-center relative mb-4 flex-col items-center'>
-          <h2 className='font-light text-xl p-4 bg-black w-full text-white uppercase tracking-wide text-center'>
+        <div className='flex w-80 justify-center relative mb-4 flex-col items-center p-4 bg-black w-full '>
+          <h2 className='font-serif font-light text-xl text-white uppercase tracking-wide text-center'>
             Most Recent Products</h2>
         </div>
         <div className="text-center">
-        <h3 className="text-lg font-medium">Look for what you want:</h3>
+        <h3 className="text-lg font-bold font-mono">Look for what you want:</h3>
         <Search />
         </div>
 
