@@ -26,7 +26,7 @@ const addProductsToCart = (productData) => {
     if (isInart) {
         return (
             <div>
-                <button className="flex justify-between text-cyan-500 inline-block 
+                <button className="flex justify-between 
                 pl-2 pr-4 py-2 mr-2 bg-gray-900 rounded font-semibold text-white w-full">
                         <IconShoppingBag /> Added to Cart 
                 </button>
@@ -35,7 +35,7 @@ const addProductsToCart = (productData) => {
     } else {
         return(
             <div>
-                <button className="flex justify-between inline-block pl-2 
+                <button className="flex justify-between pl-2 
                 pr-4 py-2 mr-2 border-2 border-gray-900 hover:bg-gray-800 
                 rounded font-semibold text-black hover:text-white w-full"
                      onClick={(e)=> {
@@ -51,11 +51,10 @@ const addProductsToCart = (productData) => {
 
     return (
         <article 
-            className="p-3 bg-white cursor-pointer w-56 h-60 h-full border-2 
-            border-gray-200 border-opacity-60 rounded-lg overflow-hidden"
+            className="p-3 bg-white cursor-pointer w-full sm:w-56 h-auto 
+    border-black border-opacity-50 border overflow-hidden"
             onClick={() => showProduct(data.data)}>
-            <figure className="relative mb-2 w-full h-4/5 lg:h-48 md:h-36 w-full 
-            object-cover object-center">
+            <figure className="relative mb-2 w-full h-48 sm:h-60 object-cover object-center">
                 <div className="absolute bottom-0 left-0 bg-gray-700/60 rounded-lg
                  text-white text-xs m-2 px-3 py-0.5 ">{data.data.category}</div>
                 <img className="w-full h-full object-cover rounded-lg " src={data.data.image} alt={data.data.title} />
