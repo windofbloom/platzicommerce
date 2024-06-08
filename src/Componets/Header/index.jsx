@@ -9,7 +9,7 @@ function Header () {
              <p className="mb-2 text-3xl font-mono">Crafted to blend fashion with function</p>
             <h2 className="text-xl font-mono">Ecommerce design made with ♥ by <a href="https://github.com/windofbloom" className="hover:underline font-bold">windofbloom</a></h2>
         </div>
-         <div>
+         <div className="object-center">
             <ImageHeader />
         </div>
 </div>
