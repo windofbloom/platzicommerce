@@ -27,7 +27,7 @@ const addProductsToCart = (productData) => {
         return (
             <div>
                 <button className="flex justify-between 
-                pl-2 pr-4 py-2 mr-2 bg-gray-900 rounded font-semibold text-white w-full">
+                pl-2 pr-4 py-2 mr-2 bg-gray-900 rounded font-semibold text-white w-full font-mono">
                         <IconShoppingBag /> Added to Cart 
                 </button>
             </div>
@@ -37,7 +37,7 @@ const addProductsToCart = (productData) => {
             <div>
                 <button className="flex justify-between pl-2 
                 pr-4 py-2 mr-2 border-2 border-gray-900 hover:bg-gray-800 
-                rounded font-semibold text-black hover:text-white w-full"
+                rounded font-semibold text-black hover:text-white w-full font-mono"
                      onClick={(e)=> {
                         e.stopPropagation();
                         addProductsToCart(data.data)}}>
@@ -56,15 +56,15 @@ const addProductsToCart = (productData) => {
             onClick={() => showProduct(data.data)}>
             <figure className="relative mb-2 w-full h-48 sm:h-60 object-cover object-center">
                 <div className="absolute bottom-0 left-0 bg-gray-700/60 rounded-lg
-                 text-white text-xs m-2 px-3 py-0.5 ">{data.data.category}</div>
-                <img className="w-full h-full object-cover rounded-lg " src={data.data.image} alt={data.data.title} />
+                 text-white text-xs m-2 px-3 py-0.5 font-mono">{data.data.category}</div>
+                <img className="w-full h-full object-cover rounded-lg" src={data.data.image} alt={data.data.title} />
                 <button className="absolute top-0 right-0 flex justify-center items-center
                 bg-gray-900 text-white w-6 h-6 rounded-full m-2 p-1"> 
                 <IconPlus /></button>
             </figure>
             <p className="flex justify-between">
-                <span className="text-sm font-light truncate mt-1">{data.data.title}</span>
-                <span className="text-lg font-medium">${data.data.price}</span>
+                <span className="text-sm font-light truncate mt-1 font-mono">{data.data.title}</span>
+                <span className="text-lg font-medium font-mono">${data.data.price}</span>
             </p>
             {renderButton(data.data.id)}
         </article>
