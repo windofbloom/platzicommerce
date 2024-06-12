@@ -8,6 +8,7 @@ import Card from "../../Componets/Card"
 import ProductDetail from "../../Componets/ProductDetail";
 import Search from "../../Componets/Search";
 import Header from "../../Componets/Header";
+import Footer from "../../Componets/Footer";
 
 import { IconGhostOff } from '@tabler/icons-react';
 
@@ -49,6 +50,7 @@ function Home() {
           {renderView()}
       </section>
       <ProductDetail />
+      <Footer />
       </Layout>
   
     )
