@@ -11,16 +11,17 @@ function ProductDetail () {
         <section 
             className={`${context.isProductDetailOpen ? 'flex' : 'hidden'}
                  flex-col fixed rounded-lg
-                 bg-white border border-black w-full max-w-lg md:max-w-3xl lg:max-w-4xl 
-    transition-opacity mx-auto`}>
+                 bg-white border border-black w-full max-w-md md:max-w-3xl 
+                 mx-auto shadow-outline`}>
             <div className='flex justify-between items-center p-4 md:p-6'>
                 <h2 className='font-medium text-lg md:text-xl font-mono'>Product Details</h2>
                 <IconX className='cursor-pointer'
                 onClick={() => context.closeProductDetial()}/>
             </div>
             <div>
-                <figure className='relative mb-2 w-full h-48 md:h-60 lg:h-80 object-cover object-center px-4 md:px-6'>
-                    <img className='w-full h-full object-cover rounded-lg'
+                <figure className='mx-auto relative mb-2 w-full h-72 md:h-60 lg:h-80 object-cover 
+                object-center px-4 md:px-6'>
+                    <img className='w-auto h-full object-cover rounded-lg'
                         src={context.productToShow.image}
                         alt={context.productToShow.title} />
                 </figure>
