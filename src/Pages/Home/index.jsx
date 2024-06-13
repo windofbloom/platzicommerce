@@ -18,19 +18,16 @@ function Home() {
   const context = useContext(ShoppingCartContext);
 
   const renderView = () => {
-    const itemsToRender = 
-      context.searchByTitle?.length > 0
-        ? context.filtereditems
-        : context.items
-
-      if (itemsToRender?.length > 0) {
-        return itemsToRender.map(item => (
+    if (context.filtereditems?.length > 0) {
+      return(
+        context.filtereditems?.map(item => (
           <Card key={item.id} data={item} />
-        ));
-      } else {
-        return <p className="font-mono text-center flex justify-between align-center">
-          No Results Found <IconGhostOff /></p>
-      }
+        ))
+      )
+    } else {
+      return <p className="font-mono text-center flex justify-between align-center">
+        No Results Found <IconGhostOff /></p>
+    }
   }
   
     return (

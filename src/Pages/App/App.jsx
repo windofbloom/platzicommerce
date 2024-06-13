@@ -13,12 +13,10 @@ import SignIn from '../SignIn'
 import Navbar from "../../Componets/Navbar";
 import CheckoutSideMenu from '../../Componets/CheckoutSideMenu'
 
-import './App.css'
-
 const AppRoutes = () => {
   let routes = useRoutes([
     { path: '/', element: <Home /> },
-    { path: '/jewerly', element: <Home /> },
+    { path: '/jewelery', element: <Home /> },
     { path: '/women-clothing', element: <Home /> },
     { path: '/men-clothing', element: <Home /> },
     { path: '/electronics', element: <Home /> },
