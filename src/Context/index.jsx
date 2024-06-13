@@ -13,6 +13,11 @@ export const ShoppingCartProvider = ({children}) => {
     const openProductDetial = () => setisProductDetailOpen(true);
     const closeProductDetial = () => setisProductDetailOpen(false);
 
+    //Mobile Menu open/close
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const openMenu = () => setIsMenuOpen(true);
+    const closeMenu = () => setIsMenuOpen(false);
+
     // Product detail Show product
     const [productToShow, setProductToShow] = useState({});
 
@@ -37,11 +42,12 @@ export const ShoppingCartProvider = ({children}) => {
       // Get-Search products by categoory
     const [searchByCategory, setSearchByCategory] = useState('');
     
-    //Filter products for Search input fuction
+    //Filter products with Search input fuction
     const filtereditemsByTitle = (items, searchByTitle) => {
       return items?.filter(item => item.title.toLowerCase().includes(searchByTitle.toLowerCase()));
   }
 
+    //Filter products by category logic
   const filtereditemsByCategory = (items, searchByCategory) => {
     console.log('items:', items);
     return items?.filter(item => item.category.toLowerCase().includes(searchByCategory.toLowerCase()));
@@ -73,6 +79,7 @@ export const ShoppingCartProvider = ({children}) => {
       if (!searchByTitle && !searchByCategory) setFilteredItems(filterBy(null, items, searchByTitle, searchByCategory))
     }, [items, searchByTitle, searchByCategory])
   
+    
     //API Fuction
     useEffect(() => {
         const fetchData = async () => {
@@ -112,7 +119,11 @@ export const ShoppingCartProvider = ({children}) => {
             filtereditems,
             setFilteredItems,
             searchByCategory,
-            setSearchByCategory
+            setSearchByCategory,
+            isMenuOpen,
+            setIsMenuOpen,
+            openMenu,
+            closeMenu
         }}>
              {children}
         </ShoppingCartContext.Provider>

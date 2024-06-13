@@ -9,11 +9,19 @@ function MobileNavLinks () {
         textDecoration: 'underline underline-offset-4',
     };
 
+    const handleClickMenu = () => {
+        context.setSearchByCategory();
+        context.closeMenu();
+    }
+
     return(
         <>
             <ul>
             <li className="font-semibold">
-                <NavLink to='/' className={({ isActive }) =>
+                <NavLink 
+                    to='/' 
+                    onClick={() => handleClickMenu()}
+                    className={({ isActive }) =>
                     isActive ? activeStyle: undefined
                     }>
                     Shopi
@@ -26,7 +34,7 @@ function MobileNavLinks () {
                 </NavLink>
             </li>
             <li>
-                <NavLink to='/jewerly'
+                <NavLink to='/jewelery'
                 onClick={() => context.setSearchByCategory('jewelery')}>
                     Jewelery
                 </NavLink>

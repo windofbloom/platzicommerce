@@ -15,7 +15,10 @@ function DesktopNavLinks () {
         <>
         <ul className="hidden md:flex item-center gap-3">
             <li className="font-semibold">
-                <NavLink to='/' className={({ isActive }) =>
+                <NavLink 
+                    to='/' 
+                    onClick={() => context.setSearchByCategory()}
+                    className={({ isActive }) =>
                     isActive ? activeStyle: undefined
                     }>
                     Shopi
@@ -97,7 +100,9 @@ function DesktopNavLinks () {
                 </NavLink>
             </li>
             <li className="flex justify-center items-center">
-                <IconShoppingBag /> {context.count}
+                <IconShoppingBag 
+                className='cursor-pointer'
+                onClick={() => context.openCheckoutSideMenu()}/> {context.cartProducts.length}
             </li>
         </ul>
         

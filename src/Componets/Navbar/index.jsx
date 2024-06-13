@@ -79,7 +79,8 @@ function Navbar() {
                 {isOpen ? <IconX /> : <IconMenu2 />}
             </button>
             <div className="flex items-center">
-                <IconShoppingBag /> {context.count}
+                <IconShoppingBag 
+                onClick={() => context.openCheckoutSideMenu()}/> {context.cartProducts.length}
             </div>
         </div>
     </nav>
