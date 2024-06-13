@@ -35,7 +35,7 @@ function CheckoutSideMenu() {
                 scrollable-cards flex-col fixed top-20 z-50 shadow-lg right-0 border bg-white
                  border-black rounded-lg w-[360px] h-[calc(100vh-80px)]`}>
             <div className='flex justify-between items-center p-6'>
-                <h2 className='font-medium text-xl'>My Order</h2>
+                <p className='font-medium text-2xl font-serif'>My Order</p>
                 <IconX 
                     className='cursor-pointer' 
                     onClick={() => context.closeCheckoutSideMenu()} />
@@ -56,12 +56,12 @@ function CheckoutSideMenu() {
             </div>
             <div className='px-6 mb-6'>
                 <p className='flex justify-between items-center mb-2'>
-                    <span className='font-light'>Total:</span>
-                    <span className='font-medium text-2xl'>${totalPrice(context.cartProducts)} </span>
+                    <span className='font-light font-mono'>Total:</span>
+                    <span className='font-medium text-2xl font-mono'>${totalPrice(context.cartProducts)} </span>
                 </p>
                 <Link to='/my-orders/last'>
                     <button 
-                        className='bg-black py-3 text-white rounded-lg w-full'
+                        className='bg-gray-900 font-mono py-3 text-white rounded-lg w-full '
                         onClick={() => handleCheckout()}>
                             Checkout
                     </button>

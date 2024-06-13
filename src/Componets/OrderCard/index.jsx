@@ -18,14 +18,14 @@ function OrderCard (props) {
                     <img className='w-full h-full rounded-lg object-cover' 
                     src={imageURL} alt={title} />
                 </figure>
-                <p className='text-sm font-light'>{title}</p>
+                <p className='text-sm font-light font-mono'>{title}</p>
             </div>
             <div className='flex items-center gap-2'>
-                <p className='text-lg font-medium'>{price}</p>
+                <p className='text-lg font-medium font-mono'>{price}</p>
                 {renderIconX}
             </div>
         </div>
     )
 }
 
-export default OrderCard
+export default OrderCard 
