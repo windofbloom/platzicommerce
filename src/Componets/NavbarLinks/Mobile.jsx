@@ -41,13 +41,13 @@ function MobileNavLinks () {
             </li>
             <li>
                 <NavLink to='/women-clothing'
-                onClick={() => context.setSearchByCategory()}>
+                onClick={() => context.setSearchByCategory("women's clothing")}>
                     Women Clothing
                 </NavLink>
             </li>
             <li>
                 <NavLink to='/men-clothing'
-                onClick={() => context.setSearchByCategory()}>
+                onClick={() => context.setSearchByCategory("men's clothing")}>
                     Men Clothing
                 </NavLink>
             </li>
