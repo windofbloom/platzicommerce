@@ -1,4 +1,4 @@
-import { useContext, useState, useEffect } from 'react';
+import { useContext } from 'react';
 import { ShoppingCartContext } from '../../Context';
 import { NavLink } from "react-router-dom";
 
@@ -9,18 +9,13 @@ function MobileNavLinks () {
         textDecoration: 'underline underline-offset-4',
     };
 
-    const handleClickMenu = () => {
-        context.setSearchByCategory();
-        context.closeMenu();
-    }
-
     return(
         <>
             <ul>
             <li className="font-semibold">
                 <NavLink 
                     to='/' 
-                    onClick={() => handleClickMenu()}
+                    onClick={() => context.setSearchByCategory()}
                     className={({ isActive }) =>
                     isActive ? activeStyle: undefined
                     }>

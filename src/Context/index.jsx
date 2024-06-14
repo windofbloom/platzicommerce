@@ -13,11 +13,6 @@ export const ShoppingCartProvider = ({children}) => {
     const openProductDetial = () => setisProductDetailOpen(true);
     const closeProductDetial = () => setisProductDetailOpen(false);
 
-    //Mobile Menu open/close
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const openMenu = () => setIsMenuOpen(true);
-    const closeMenu = () => setIsMenuOpen(false);
-
     // Product detail Show product
     const [productToShow, setProductToShow] = useState({});
 
@@ -119,11 +114,7 @@ export const ShoppingCartProvider = ({children}) => {
             filtereditems,
             setFilteredItems,
             searchByCategory,
-            setSearchByCategory,
-            isMenuOpen,
-            setIsMenuOpen,
-            openMenu,
-            closeMenu
+            setSearchByCategory
         }}>
              {children}
         </ShoppingCartContext.Provider>
