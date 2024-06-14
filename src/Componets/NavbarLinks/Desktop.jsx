@@ -47,7 +47,7 @@ function DesktopNavLinks () {
             <li>
                 <NavLink 
                     to='/women-clothing' 
-                    onClick={() => context.setSearchByCategory()}
+                    onClick={() => context.setSearchByCategory("women's clothing")}
                     className={({ isActive }) =>
                     isActive ? activeStyle: undefined
                     }>
@@ -57,7 +57,7 @@ function DesktopNavLinks () {
             <li>
                 <NavLink 
                     to='/men-clothing' 
-                    onClick={() => context.setSearchByCategory('')}
+                    onClick={() => context.setSearchByCategory("men's clothing")}
                     className={({ isActive }) =>
                     isActive ? activeStyle: undefined
                     }>
