@@ -4,10 +4,11 @@ import Layout from "../../Componets/Layout"
 import { ShoppingCartContext } from '../../Context';
 
 /*COMPONENTS*/ 
+import Header from "../../Componets/Header";
 import Card from "../../Componets/Card"
 import ProductDetail from "../../Componets/ProductDetail";
 import Search from "../../Componets/Search";
-import Header from "../../Componets/Header";
+import Pagination from "../../Componets/Pagination";
 import Footer from "../../Componets/Footer";
 
 import { IconGhostOff } from '@tabler/icons-react';
@@ -47,6 +48,7 @@ function Home() {
           {renderView()}
       </section>
       <ProductDetail />
+      <Pagination />
       <Footer />
       </Layout>
   
