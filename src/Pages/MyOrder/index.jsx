@@ -16,11 +16,14 @@ function MyOrder() {
 
   return (
     <Layout>
-      <div className='flex w-80 justify-center relative items-center mb-5'>
+      <div className='flex bg-gray-900 w-full p-4 justify-center relative mb-4 -m-4'>
+          <span className='flex w-80 justify-center relative items-center
+          font-serif font-light text-xl text-white uppercase tracking-wide text-center'>
           <Link to='/my-orders' className='absolute left-0'>
             <IconChevronsLeft className='cursor-pointer'/>
           </Link>
-            <h1>My Order</h1>
+          <h1>My Order</h1>
+          </span>
         </div>
       <div className='flex flex-col w-80'>
         {

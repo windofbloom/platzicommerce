@@ -12,16 +12,18 @@ function OrderCard (props) {
     }
 
     return(
-        <div className="flex justify-between items-center mb-3">
-            <div className='flex items-center gap-2'>
-                <figure className='w-20 h-20'>
+        <div className="flex justify-between items-center mb-3 w-86 bg-white 
+            font-mono p-2 border border-black rounded-lg">
+            <div className='flex items-center gap-4'>
+                <figure className='w-20 h-20 object-cover'>
                     <img className='w-full h-full rounded-lg object-cover' 
                     src={imageURL} alt={title} />
                 </figure>
                 <p className='text-sm font-light font-mono'>{title}</p>
             </div>
             <div className='flex items-center gap-2'>
-                <p className='text-lg font-medium font-mono'>{price}</p>
+                <p className='font-medium text-xl flex justify-between
+                    items-center gap-2'>${price}</p>
                 {renderIconX}
             </div>
         </div>
