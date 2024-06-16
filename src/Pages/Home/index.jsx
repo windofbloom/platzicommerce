@@ -22,13 +22,16 @@ function Home() {
       //Pagination
       const totalProducts = context.items.length;
 
-      const [productsPerPage, setProductsPerPage] = useState(6);
+      const [productsPerPage, setProductsPerPage] = useState(4);
       const [currentPage, setCurrentPage] = useState(1);
+
+      const lastIndex = currentPage * productsPerPage
+      const firstIndex = lastIndex - productsPerPage
 
   const renderView = () => {
     if (context.filtereditems?.length > 0) {
       return(
-        context.filtereditems?.map(item => (
+        context.filtereditems.slice(firstIndex, lastIndex).map(item => (
           <Card key={item.id} data={item} />
         ))
       )

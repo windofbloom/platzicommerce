@@ -24,12 +24,11 @@ function Pagination ({productsPerPage, totalProducts, currentPage, setCurrentPag
     }
 
     return (
-        <Layout>
-            <div className="font-mono w-full flex bg-white rounded-lg p-2 mb-8">
+            <div className="mt-6 flex items-center justify-center flex-wrap font-mono w-full bg-white rounded-lg p-2 mb-8">
                 <button 
                 onClick={onPreviousPage}
                 disabled={currentPage === 1}
-                className={`${currentPage === 1 ? 'bg-gray-300 cursor-not-allowed opacity-50' : ''} h-12 border-2 border-black px-6 rounded-l-lg 
+                className={`${currentPage === 1 ? 'bg-gray-300 cursor-not-allowed opacity-50' : ''} h-8 text-xs border-2 border-black px-6 rounded-lg 
                 hover:bg-black hover:text-white mr-2`}>
                     <p className="text-x1 font-medium">Prev</p>
                 </button>
@@ -39,7 +38,7 @@ function Pagination ({productsPerPage, totalProducts, currentPage, setCurrentPag
                         pageNumbers.map(noPage => (
                             <li key={noPage}
                             className= {`${noPage === currentPage ? 'bg-black text-white' : ''}
-                                h-12 border-2 border-black px-6 rounded-lg 
+                                h-8 text-xs border-2 border-black px-6 rounded-lg 
                              hover:bg-black hover:text-white mr-2 cursor-pointer flex items-center justify-center`}>
                                 <a onClick={() => onSpecificPage(noPage)}
                                 className="font-medium">{noPage}</a>
@@ -52,12 +51,11 @@ function Pagination ({productsPerPage, totalProducts, currentPage, setCurrentPag
                 <button 
                 onClick={onNextPage}
                 disabled={currentPage >= pageNumbers.length}
-                className={`${currentPage >= pageNumbers.length ? 'bg-gray-300 cursor-not-allowed opacity-50' : ''} h-12 border-2 border-black px-6 rounded-r-lg 
+                className={`${currentPage >= pageNumbers.length ? 'bg-gray-300 cursor-not-allowed opacity-50' : ''} h-8 text-xs border-2 border-black px-6 rounded-lg 
                 hover:bg-black hover:text-white mr-2`}>
                     <p className="text-x1 font-medium">Next</p>
                 </button>
             </div>
-        </Layout>
     )
 }
 
