@@ -1,5 +1,5 @@
 
-import { useContext } from "react"
+import { useContext, useState } from "react"
 import Layout from "../../Componets/Layout"
 import { ShoppingCartContext } from '../../Context';
 
@@ -17,6 +17,13 @@ import { IconGhostOff } from '@tabler/icons-react';
 function Home() {
 
   const context = useContext(ShoppingCartContext);
+  //console.log('products:', context.items);
+
+      //Pagination
+      const totalProducts = context.items.length;
+
+      const [productsPerPage, setProductsPerPage] = useState(6);
+      const [currentPage, setCurrentPage] = useState(1);
 
   const renderView = () => {
     if (context.filtereditems?.length > 0) {
@@ -44,11 +51,16 @@ function Home() {
         </div>
 
         <section className="grid gap-6 sm:gap-8 md:gap-10 lg:gap-12 w-full 
-        max-w-screen-lg grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mb-6">
+        max-w-screen-lg grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
           {renderView()}
       </section>
       <ProductDetail />
-      <Pagination />
+      <Pagination 
+        productsPerPage={productsPerPage}
+        currentPage={currentPage}
+        setCurrentPage={setCurrentPage}
+        totalProducts={totalProducts}
+      />
       <Footer />
       </Layout>
   
