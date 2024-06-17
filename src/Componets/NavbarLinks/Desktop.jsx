@@ -11,6 +11,12 @@ function DesktopNavLinks () {
         textDecoration: 'underline underline-offset-4',
     };
 
+    const handleSignOut = () => {
+        const stringifiedSignOut = JSON.stringify(true)
+        localStorage.setItem('sign-out', stringifiedSignOut)
+        context.setSignOut(true)
+    }
+
     return (
         <>
         <ul className="hidden md:flex item-center gap-3">
@@ -93,11 +99,14 @@ function DesktopNavLinks () {
                 </NavLink>
             </li>
             <li>
-                <NavLink to='/sign-in' className={({ isActive }) =>
-                    isActive ? activeStyle: undefined
-                    }>
-                    Sign In
-                </NavLink>
+            <NavLink
+              to='/sign-in'
+              className={({ isActive }) =>
+                isActive ? activeStyle : undefined
+              }
+              onClick={() => handleSignOut()}>
+              Sign out
+            </NavLink>
             </li>
             <li className="flex justify-center items-center">
                 <IconShoppingBag 

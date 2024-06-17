@@ -43,8 +43,8 @@ function SignUp() {
           </Link>
 
           <div className="text-center mt-4 text-xs">
-            <p>Already have an account yet? <Link to="/sign-in"><a className="font-light underline 
-            underline-offset-4" href="/">Sign In!</a></Link></p>
+            <span>Already have an account yet? <Link to="/sign-in"><p className="font-light underline 
+            underline-offset-4">Sign In!</p></Link></span>
           </div>
           
         </div>
