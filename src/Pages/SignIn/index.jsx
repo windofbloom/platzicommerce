@@ -21,6 +21,7 @@ function SignIn() {
             <input className="rounded bg-gray-500/20 p-3"
               placeholder="*****"></input>
           </span>
+          
           <Link
             to="/">
             <button className="bg-black disabled:bg-black/40 text-white w-full 
@@ -28,16 +29,15 @@ function SignIn() {
               Log In
             </button>
           </Link>
-          
-           <button className="border border-black disabled:text-black/40
-           disabled:border-black/40 rounded-lg mt-6 py-3 w-full">
-            Sign Up
-          </button>
-
-          
           <div className="text-center">
-            <a className="font-light text-xs underline underline-offset-4" href="/">Forgot my password</a>
+            <a className="font-light text-xs underline underline-offset-4" href="/">Forgot my password?</a>
           </div>
+
+          <div className="text-center mt-4 text-xs">
+            <p>Don't have an account yet? <Link to="/sign-up"><a className="font-light underline 
+            underline-offset-4" href="/">Sign up for free!</a></Link></p>
+          </div>
+          
         </div>
       </Layout>
 
