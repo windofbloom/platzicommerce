@@ -1,31 +1,52 @@
+import { useContext, useState, useRef } from "react"
+import { ShoppingCartContext } from '../../Context';
 import { Link } from "react-router-dom"
 import Layout from "../../Componets/Layout"
 
 function SignIn() {
   
-    return (
-      <Layout>
-        <div className="flex flex-wrap bg-gray-900 w-full p-4 justify-center relative mb-4 -m-4">
-          <h1 className="font-serif font-light text-xl text-white uppercase tracking-wide text-center">Welcome to Shopi </h1>
-        </div>
+  const context = useContext(ShoppingCartContext);
+  const [view, setView] = useState('user-info');
+  const form = useRef(null);
 
-        <div className="w-96 bg-white p-6 border border-black rounded-lg mt-5 flex flex-wrap flex-col">
+  //Account
+  const account = localStorage.getItem('account');
+  const parsedAccount = JSON.parse(account);
+
+  //Has an account
+  const noAccountInLocalStorage = parsedAccount ? Object.keys(parsedAccount).length === 0 : true
+  const noAccountInLocalState = context.account ? Object.keys(context.account).length ===  0 : true
+  const hasUserAnAccount = !noAccountInLocalStorage || !noAccountInLocalState
+
+  const createAnAccount = () => {
+    const formData = new FormData(form.current)
+    const data = {
+      name: formData.get('name'),
+      email: formData.get('email'),
+      password: formData.get('password')
+    }
+  }
+
+  const renderLogIn = () => {
+    return(
+      <div className="w-96 bg-white p-6 border border-black rounded-lg mt-5 flex flex-wrap flex-col">
           <span className="flex flex-col mb-3">
             <p className="font-light text-sm mb-2">Email:</p>
             <input className="rounded p-3 bg-gray-500/20"
-              placeholder="shopi@shopi.com"></input>
+              placeholder="shopi@shopi.com">{parsedAccount?.email}</input>
           </span>
 
           <span className="flex flex-col">
             <p className="font-light text-sm mb-3">Password:</p>
             <input className="rounded bg-gray-500/20 p-3"
-              placeholder="*****"></input>
+              placeholder="*****">{parsedAccount?.password}</input>
           </span>
           
           <Link
             to="/">
             <button className="bg-black disabled:bg-black/40 text-white w-full 
-            rounded-lg py-3 mt-4 mb-1">
+            rounded-lg py-3 mt-4 mb-1"
+            disabled={!hasUserAnAccount}>
               Log In
             </button>
           </Link>
@@ -34,11 +55,65 @@ function SignIn() {
           </div>
 
           <div className="text-center mt-4 text-xs">
-            <span>Don't have an account yet? <Link to="/sign-up"><p className="font-light underline 
-            underline-offset-4">Sign up for free!</p></Link></span>
+            <span>Don't have an account yet? <p className="font-light underline 
+            underline-offset-4 cursor-pointer"
+            onClick={() => setView('create-user-info')}
+            disabled={hasUserAnAccount}>Sign up for free!</p></span>
           </div>
           
         </div>
+    )
+  }
+
+  const renderCreateUserInfo = () => {
+    <form ref={form} className="w-96 bg-white p-6 border border-black rounded-lg mt-5 flex flex-wrap flex-col">
+      <div className="flex flex-col gap-1">
+        <label htmlFor="name" className="font-light text-sm">Your name:</label>
+        <input 
+          type="text"
+          id="name"
+          name="name"
+          defaultValue={parsedAccount?.name}
+          placeholder="Peter"
+          className="rounded bg-gray-500/20 p-3"/>
+      </div>
+      <div className="flex flex-col gap-1">
+        <labe htmlFor="email" className="font-light text-sm">Your email:</labe>
+        <input 
+          type="text"
+          id="email"
+          name="email"
+          defaultValue={parsedAccount?.email}
+          placeholder="hi@helloworld.com"
+          className="rounded bg-gray-500/20 p-3" />
+      </div>
+      <div className="flex flex-col gap-1">
+        <label htmlFor="password" className="font-light text-sm">Your Password:</label>
+        <input 
+          type="text"
+          id="password"
+          name="password"
+          defaultValue={parsedAccount?.password}
+          placeholder="*****"
+          className="rounded bg-gray-500/20 p-3" />
+      </div>
+      <Link to="/">
+        <button className="bg-black text-white w-full rounded-lg py-3"
+          onClick={() => createAnAccount()}>
+            Create your account!
+        </button>
+      </Link>
+    </form>
+  }
+
+  const renderView = () => view === 'create-user-info' ? renderCreateUserInfo() : renderLogIn()
+ 
+    return (
+      <Layout>
+        <div className="flex flex-wrap bg-gray-900 w-full p-4 justify-center relative mb-4 -m-4">
+          <h1 className="font-serif font-light text-xl text-white uppercase tracking-wide text-center">Welcome to Shopi </h1>
+        </div>
+        {renderView()}
       </Layout>
 
     )
