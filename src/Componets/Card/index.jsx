@@ -27,7 +27,8 @@ const addProductsToCart = (productData) => {
         return (
             <div>
                 <button className="flex justify-between 
-                pl-2 pr-4 py-2 mr-2 bg-gray-900 rounded font-semibold text-white w-full font-mono">
+                pl-2 pr-4 py-2 mr-2 bg-gray-900 rounded font-semibold text-white w-full 
+                font-mono uppercase ">
                         <IconShoppingBag /> Added to Cart 
                 </button>
             </div>
@@ -37,7 +38,7 @@ const addProductsToCart = (productData) => {
             <div>
                 <button className="flex justify-between pl-2 
                 pr-4 py-2 mr-2 border-2 border-gray-900 hover:bg-gray-800 
-                rounded font-semibold text-black hover:text-white w-full font-mono"
+                rounded font-semibold text-black hover:text-white w-full font-mono uppercase"
                      onClick={(e)=> {
                         e.stopPropagation();
                         addProductsToCart(data.data)}}>

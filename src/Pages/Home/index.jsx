@@ -12,6 +12,7 @@ import Pagination from "../../Componets/Pagination";
 import Footer from "../../Componets/Footer";
 
 import { IconGhostOff } from '@tabler/icons-react';
+import '../../../src/index.css'
 
 
 function Home() {
@@ -45,7 +46,7 @@ function Home() {
       <Layout>
         <Header />
         <div className='flex justify-center relative mb-4 flex-col items-center p-4 bg-black w-full '>
-          <h2 className='font-serif font-light text-xl text-white uppercase tracking-wide text-center'>
+          <h2 className='font-serif font-light text-xl text-white uppercase tracking-wide text-center animate-bounce duration-100'>
             Most Recent Products</h2>
         </div>
         <div className="text-center">
