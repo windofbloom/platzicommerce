@@ -9,12 +9,61 @@ function MobileNavLinks () {
         textDecoration: 'underline underline-offset-4',
     };
 
+      // Sign Out
+  const signOut = localStorage.getItem('sign-out')
+  const parsedSignOut = JSON.parse(signOut)
+  const isUserSignOut = context.signOut || parsedSignOut
+  // Account
+  const account = localStorage.getItem('account')
+  const parsedAccount = JSON.parse(account)
+  // Has an account
+  const noAccountInLocalStorage = parsedAccount ? Object.keys(parsedAccount).length === 0 : true
+  const noAccountInLocalState = context.account ? Object.keys(context.account).length === 0 : true
+  const hasUserAnAccount = !noAccountInLocalStorage || !noAccountInLocalState
+
+    const handleSignOut = () => {
+        const stringifiedSignOut = JSON.stringify(true)
+        localStorage.setItem('sign-out', stringifiedSignOut)
+        context.setSignOut(true)
+    }
+
+    const renderView = () => {
+        if (hasUserAnAccount && !isUserSignOut) {
+            return (
+                <>
+                <li className="font-semibold">shopi@shopi.com</li>
+                    <li>
+                <NavLink to='/my-orders'>
+                    My Orders
+                </NavLink>
+                 </li>
+                <li>
+                <NavLink to='/my-account'>
+                    My Account
+                </NavLink>
+                </li>
+                </>
+            )
+        } else {
+            return (
+              <li>
+                <NavLink
+                  to="/sign-in"
+                  className={({ isActive }) => isActive ? activeStyle : undefined }
+                  onClick={() => handleSignOut()}>
+                  Sign in
+                </NavLink>
+              </li>
+            )
+          }
+    }
+
     return(
         <>
             <ul>
             <li className="font-semibold">
                 <NavLink 
-                    to='/' 
+                    to={`${isUserSignOut ? '/sign-in' : '/'}`} 
                     onClick={() => context.setSearchByCategory()}
                     className={({ isActive }) =>
                     isActive ? activeStyle: undefined
@@ -55,22 +104,17 @@ function MobileNavLinks () {
         </ul>
 
         <ul>
-            <li className="font-semibold">shopi@shopi.com</li>
-            <li>
-                <NavLink to='/my-orders'>
-                    My Orders
-                </NavLink>
-            </li>
-            <li>
-                <NavLink to='/my-account'>
-                    My Account
-                </NavLink>
-            </li>
-            <li>
-                <NavLink to='/sign-in'>
-                    Sign In
-                </NavLink>
-            </li>
+            {renderView()}
+            {/** <li>
+            <NavLink
+              to='/sign-in'
+              className={({ isActive }) =>
+                isActive ? activeStyle : undefined
+              }
+              onClick={() => handleSignOut()}>
+              Sign In
+            </NavLink>
+            </li>*/} 
         </ul>
         </>
     )
