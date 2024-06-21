@@ -31,7 +31,7 @@ function MobileNavLinks () {
         if (hasUserAnAccount && !isUserSignOut) {
             return (
                 <>
-                <li className="font-semibold">shopi@shopi.com</li>
+                <li className="font-semibold">{parsedAccount?.email}</li>
                     <li>
                 <NavLink to='/my-orders'>
                     My Orders
@@ -41,6 +41,14 @@ function MobileNavLinks () {
                 <NavLink to='/my-account'>
                     My Account
                 </NavLink>
+                </li>
+                <li>
+                    <NavLink
+                    to='/sign-in'
+                    className={({ isActive }) => isActive ? activeStyle : undefined}
+                    onClick={() => handleSignOut()}>
+                    Sign out
+                    </NavLink>
                 </li>
                 </>
             )
