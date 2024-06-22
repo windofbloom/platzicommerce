@@ -1,14 +1,14 @@
-# Ecommerce UI with React
+# Ecommerce UI with React and Tailwind CSS
 
-On going learning project with Platzi
+Check the Live Project [clicking here] ()
 
-Test change
+This repository was created to showcase an Ecommerce UI project, utilizing FakeStore Api working with Tailwind CSS, React + Vite.
 
------
+## Work with it
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+- Clone the repository with `git clone [Repository URL]`
+- Install dependancies with `git clone [URL del repositorio]`
+- Install Tailwind CSS following  [Tailwind Official Documentation] (https://tailwindcss.com/docs/guides/vite)
+- Start the local host with `npm run dev`
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
