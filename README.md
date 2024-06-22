@@ -1,6 +1,6 @@
 # Ecommerce UI with React and Tailwind CSS
 
-Check the Live Project [clicking here]()
+Check the Live Project [clicking here](https://windofbloom.github.io/platzicommerce/)
 
 This repository was created to showcase an Ecommerce UI project, utilizing FakeStore Api working with Tailwind CSS, React + Vite.
 
